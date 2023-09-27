@@ -24,6 +24,7 @@ export async function createEvent(req, res) {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 }
+
 export async function deleteEvent(req, res) {
   try {
     const { id } = req.params; 
@@ -43,14 +44,15 @@ export async function deleteEvent(req, res) {
     return res.status(500).json({ message: 'Internal Server Error' });
   }
 }
+
 export async function updateEvent(req, res) {
   try {
-    const { id } = req.params; // assuming you are passing the id of the event in the request parameters
+    const { id } = req.params;
     if (!id) {
       return res.status(400).json({ message: 'Event id is required' });
     }
 
-    const { address, category } = req.body; // assuming you want to update address and category of the event
+    const { address, category } = req.body;
     if (!address || !category) {
       return res.status(400).json({ message: 'Address and category are required' });
     }
@@ -66,6 +68,3 @@ export async function updateEvent(req, res) {
     return res.status(500).json({ message: 'Internal Server Error' });
   }
 }
-
-
-

@@ -24,6 +24,7 @@ export async function createComment(req, res) {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 }
+
 export async function deleteComment(req, res) {
   try {
     const { id } = req.params; // assuming you are passing the id of the comment in the request parameters
